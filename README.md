@@ -17,7 +17,9 @@ Each operator takes two arguments (numbers) and works the way you'd expect.
  - `.` - assignment operator
 
 > Comparison operators return boolean types.
+
 > Logical operators work either on number's bits or booleans.
+
 > The assignment binds a value to a name and returns a value of the second argument. This means you can also rebind the value of numbers.
 
 ### conditionals
@@ -38,12 +40,13 @@ You can use the assignment operator to bind names with values.
 
 ## inspiration
 [Polish Notation](https://pl.wikipedia.org/wiki/Notacja_polska) was the inspiration to write this language, therefore I name the language "epnel".
-
-> E - Educational
-> P - Polish
-> N - Notation
-> E - Evaluation
-> L - Language
+```
+E - Educational
+P - Polish
+N - Notation
+E - Evaluation
+L - Language
+```
 
 ## wishlist
 A few things that might be nice to have:
