@@ -3,7 +3,8 @@ A simple lispy programming language without parentheses.
 
 ## description
 ### operators
-Each operator takes two arguments (numbers) and works the way you'd expect.
+Each operator takes two arguments: (expression, expression).
+They work the way you would expect.
  - `+` - addition
  - `-` - subtraction
  - `*` - multiplication
@@ -14,29 +15,51 @@ Each operator takes two arguments (numbers) and works the way you'd expect.
  - `^` - disjunction (xor)
  - `&` - conjunction (and)
  - `=` - equation (is equal to?)
- - `.` - assignment operator
 
 > Comparison operators return boolean types.
 
 > Logical operators work either on number's bits or booleans.
-
-> The assignment binds a value to a name and returns a value of the second argument. This means you can also rebind the value of numbers.
 
 ### conditionals
 Conditional takes three arguments: (test, then, else).
 If "test" evaluates to True, then the "then" branch is executed. Otherwise the "else" branch is executed.
  - `?` - conditional
 
+### assignments
+The first argument for each assignment operator is a name.
+Names are also expressions and will be evaluated before assignment.
+The only restriction is that you can't bind to any reserved keywords.
+ - `.` - variable assignment
+ - `,` - function assignment
+
+The variable assignment takes two arguments: (name, expression).
+"Expression" is evaluated and it's value is bound to the name.
+
+The function assignment takes three arguments: (name, definition, expression).
+"Definition" is an expression, which isn't evaluated until the "name" is called.
+Whenever a call to "name" appears it will evaluate the function definition expression and return it's new value.
+"Expression" is the return value of the function assignment.
+
+> Assignments bind values or expressions to names. This means you can also change the behaviour of numbers.
+
 ### booleans
 You can produce booleans using comparison operators. True is equal to 1 and False is equal to 0.
-The boolean primitive evaluates to False.
+The boolean primitive evaluates to False (and is immutable).
  - `!` - boolean (false)
 
 ### numbers
+or as some would say: literals
+#### decimals
 Decimal numbers are composed of digits or passed around as variables.
-The variable name can be anything which is not an operator.
 The default value for any variable is zero: 0 or False.
-You can use the assignment operator to bind names with values.
+
+#### names
+The variable name can be anything which is not a language keyword.
+If name is an expression it is evaluated and the result is used as a literal name.
+You can use the assignment to bind names with values.
+
+### expressions
+Expressions are evaluated either to numbers or booleans. Everything is an expression.
 
 ## inspiration
 [Polish Notation](https://pl.wikipedia.org/wiki/Notacja_polska) was the inspiration to write this language, therefore I name the language "epnel".
@@ -48,9 +71,11 @@ E - Evaluation
 L - Language
 ```
 
+## installation
+You can simply use `python setup.py install`.
+
 ## wishlist
-A few things that might be nice to have:
- - functions
- - loops
+Some things that might be nice to have:
+ - CLI
  - compiler to C
 
