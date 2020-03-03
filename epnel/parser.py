@@ -32,10 +32,14 @@ class Parser():
 		self.ast = self.parse(self.lexer.next())
 
 	def parse(self, token):
-		if token in "+-*/<>|^&=.":
+		if token in "+-*/<>|^&=":
 			return AST_Node(token, "operator", (self.parse(self.lexer.next()), self.parse(self.lexer.next())))
 		elif token == "?":
 			return AST_Node(token, "conditional", (self.parse(self.lexer.next()), self.parse(self.lexer.next()), self.parse(self.lexer.next())))
+		elif token == ".":
+			return AST_Node(token, "assignment", (self.parse(self.lexer.next()), self.parse(self.lexer.next())))
+		elif token == ",":
+			return AST_Node(token, "assignment", (self.parse(self.lexer.next()), self.parse(self.lexer.next()), self.parse(self.lexer.next())))
 		elif token == "!":
 			return AST_Node(token, "boolean")
 		else:
