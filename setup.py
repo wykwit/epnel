@@ -4,7 +4,7 @@ with open("README.md", "r") as f: desc = f.read()
 
 setup(
 	name="epnel",
-	version="0.0.1",
+	version="0.0.2",
 	license="GPLv3",
 	author="wykwit",
 	author_email="wykwit@disroot.org",
