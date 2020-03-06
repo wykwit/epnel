@@ -12,5 +12,5 @@ setup(
 	long_description=desc,
 	long_description_content_type="text/markdown",
 	packages=find_packages(),
-	entry_points={"console_scripts": ["epnel = epnel:repl"]},
+	entry_points={"console_scripts": ["epnel = epnel.repl:cli"]},
 )

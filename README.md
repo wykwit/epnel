@@ -76,6 +76,5 @@ You can simply use `python setup.py install`.
 
 ## wishlist
 Some things that might be nice to have:
- - CLI
  - compiler to C
 

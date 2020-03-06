@@ -7,8 +7,11 @@ class Lexer():
 			string = input_file.read()
 		self.data = deque(string.upper().split())
 
+	def empty(self):
+		return not self.data
+
 	def next(self):
-		if not self.data:
+		if self.empty():
 			raise Exception("input empty, lexems missing?")
 		return self.data.popleft()
 
@@ -29,7 +32,18 @@ class Parser():
 			self.lexer = Lexer(**kwargs)
 		else:
 			self.lexer = lexer
-		self.ast = self.parse(self.lexer.next())
+		self.next()
+
+	def empty(self):
+		return not self.ast
+
+	def next(self):
+		r = self.root()
+		if not self.lexer.empty():
+			self.ast = self.parse(self.lexer.next())
+		else:
+			self.ast = None
+		return r
 
 	def parse(self, token):
 		if token in "+-*/<>|^&=":
