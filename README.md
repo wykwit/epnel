@@ -31,6 +31,7 @@ Names are also expressions and will be evaluated before assignment.
 The only restriction is that you can't bind to any reserved keywords.
  - `.` - variable assignment
  - `,` - function assignment
+ - `:` - number reassignment
 
 The variable assignment takes two arguments: (name, expression).
 "Expression" is evaluated and it's value is bound to the name.
@@ -41,6 +42,10 @@ Whenever a call to "name" appears it will evaluate the function definition expre
 "Expression" is the return value of the function assignment.
 
 > Assignments bind values or expressions to names. This means you can also change the behaviour of numbers.
+
+Number reassignment takes only one argument and returns a value of it's argument's value. Similar functionality is attributed to "dereference" in some languages. The argument is interpreted as if it's value was typed straight in place of this assignment.
+
+> Number reassignment reassigns to itself a number corresponding to the value of it's name.
 
 ### booleans
 You can produce booleans using comparison operators. True is equal to 1 and False is equal to 0.

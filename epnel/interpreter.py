@@ -44,6 +44,9 @@ def assignment(node):
 	elif node.value == ",":
 		symbol_table[key] = node.children[1]
 		return interpret(node.children[2])
+	elif node.value == ":":
+		key = str(number(AST_Node(key, "number")))
+		return number(AST_Node(key, "number"))
 	else:
 		raise Exception("invalid assignment", node)
 

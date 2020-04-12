@@ -17,7 +17,7 @@ class Lexer():
 
 # abstract syntax tree node representation
 class AST_Node():
-	def __init__(self, value, type="", children=()):
+	def __init__(self, value, type="", children=[]):
 		self.value = value
 		self.type = type
 		self.children = children
@@ -47,13 +47,15 @@ class Parser():
 
 	def parse(self, token):
 		if token in "+-*/<>|^&=":
-			return AST_Node(token, "operator", (self.parse(self.lexer.next()), self.parse(self.lexer.next())))
+			return AST_Node(token, "operator", [self.parse(self.lexer.next()), self.parse(self.lexer.next())])
 		elif token == "?":
-			return AST_Node(token, "conditional", (self.parse(self.lexer.next()), self.parse(self.lexer.next()), self.parse(self.lexer.next())))
+			return AST_Node(token, "conditional", [self.parse(self.lexer.next()), self.parse(self.lexer.next()), self.parse(self.lexer.next())])
+		elif token == ":":
+			return AST_Node(token, "assignment", [self.parse(self.lexer.next())])
 		elif token == ".":
-			return AST_Node(token, "assignment", (self.parse(self.lexer.next()), self.parse(self.lexer.next())))
+			return AST_Node(token, "assignment", [self.parse(self.lexer.next()), self.parse(self.lexer.next())])
 		elif token == ",":
-			return AST_Node(token, "assignment", (self.parse(self.lexer.next()), self.parse(self.lexer.next()), self.parse(self.lexer.next())))
+			return AST_Node(token, "assignment", [self.parse(self.lexer.next()), self.parse(self.lexer.next()), self.parse(self.lexer.next())])
 		elif token == "!":
 			return AST_Node(token, "boolean")
 		else:
