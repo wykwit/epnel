@@ -8,7 +8,7 @@ setup(
 	license="GPLv3",
 	author="wykwit",
 	author_email="wykwit@disroot.org",
-	description="Educational Polish Notation Evaluation Language",
+	description="Esoteric Polish Notation Evaluation Language",
 	long_description=desc,
 	long_description_content_type="text/markdown",
 	packages=find_packages(),

@@ -1,5 +1,5 @@
 # epnel
-A simple lispy programming language without parentheses.
+A simple esoteric and lispy programming language without parentheses.
 
 ## description
 ### operators
@@ -67,9 +67,9 @@ You can use the assignment to bind names with values.
 Expressions are evaluated either to numbers or booleans. Everything is an expression.
 
 ## inspiration
-[Polish Notation](https://pl.wikipedia.org/wiki/Notacja_polska) was the inspiration to write this language, therefore I name the language "epnel".
+[Polish Notation](https://pl.wikipedia.org/wiki/Notacja_polska) was the inspiration to write this language, therefore I named the language "epnel".
 ```
-E - Educational
+E - Esoteric
 P - Polish
 N - Notation
 E - Evaluation
