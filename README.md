@@ -86,3 +86,7 @@ $ pip install .
 Some things that might be nice to have:
  - compiler to C
 
+## license
+
+GNU GPLv3
+
