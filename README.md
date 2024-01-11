@@ -77,7 +77,10 @@ L - Language
 ```
 
 ## installation
-You can simply use `python setup.py install`.
+You can simply use:
+```
+$ pip install .
+```
 
 ## wishlist
 Some things that might be nice to have:
