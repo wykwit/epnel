@@ -8,6 +8,7 @@ setup(
 	license="GPLv3",
 	author="wykwit",
 	author_email="wykwit@disroot.org",
+	url="https://gitlab.com/wykwit/epnel",
 	description="Esoteric Polish Notation Evaluation Language",
 	long_description=desc,
 	long_description_content_type="text/markdown",
